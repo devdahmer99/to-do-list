@@ -1,0 +1,44 @@
+---Planejamento do Projeto:
+
+Mapeamento Entidades e Relacionamentos:
+
+--Usuário
+
+--Usuário x Tarefa
+-- Um Usuário pode criar várias tarefas
+
+--Usuário x Categoria
+--Um usuário pode ter várias categorias
+
+--Tarefas
+
+--Tarefa x Usuário
+-- Uma tarefa SEMPRE vai pertencer a um único usuário
+
+--Categorias
+
+--Tarefa x Categorias
+-- Uma categoria pode TER várias tarefas
+
+--Categoria x Usuário
+---Uma categoria SEMPRE vai pertencer a um usuário
+
+
+--Detalhamento das Migrations:
+
+- Usuário:
+-- Padrão Laravel
+
+- Tarefa:
+-- id
+-- titulo
+-- data
+-- descricao
+-- categoria_id
+-- usuario_id
+
+- Categoria:
+- id
+- nome
+- cor (hexadecimal)
+- usuario_id
