@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,12 +17,15 @@ class TaskFactory extends Factory
      */
     public function definition(): array
     {
+        $category = Category::all()->random();
+        $user = $category->user;
+
         return [
             'title' => fake()->title(),
             'due_date' => fake()->dateTime(),
             'description' => fake()->text(),
-            'user_id' => 1,
-            'category_id' => 1
+            'user_id' => $user,
+            'category_id' => $category
         ];
     }
 }
