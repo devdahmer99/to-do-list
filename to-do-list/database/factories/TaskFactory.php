@@ -25,7 +25,8 @@ class TaskFactory extends Factory
             'due_date' => fake()->dateTime(),
             'description' => fake()->text(),
             'user_id' => $user,
-            'category_id' => $category
+            'category_id' => $category,
+            'is_done' => fake()->boolean()
         ];
     }
 }
