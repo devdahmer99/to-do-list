@@ -13,11 +13,7 @@
             <x-form.textInput type="date" name="due_date" label="Data de Realização" required="required"/>
             <x-form.selectInput name="category" label="Categoria" required="required"/>
             <x-form.textAreaInput name="description" label="Descrição da tarefa" placeholder="Digite a descrição da sua tarefa aqui..."/>
-
-            <div class="inputArea">
-                <button type="reset" class="btn">Resetar</button>
-                <button type="submit" class="btn btn-primary">Criar Tarefa</button>
-            </div>
+            <x-form.form_button resetText="Resetar" submitText="Criar Tarefa"/>
         </form>
     </section>
 </x-layout>
