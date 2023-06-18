@@ -50,6 +50,7 @@ class TaskController extends Controller
     public function edit_action(Request $request)
     {
          $request_data = $request->only(['title', 'due_date', 'category_id', 'description']); 
+         $request_data['is_done'] = $request->is_done ? true : false;
          $task = Task::find($request->id);
          if(!$task) {
             return 'Erro! Task não localizada na base de dados!';
@@ -61,11 +62,14 @@ class TaskController extends Controller
 
     public function delete(Request $request)
     {
+        $id = $request->id;
+        $task = Task::find($id);
+
+        if($task) {
+            $task->delete();
+        }
         return redirect()->route('home');
 
     }
-    public function show()
-    {
 
-    }
 }
