@@ -5,7 +5,13 @@
     </a>
     </x-slot:btn>
 
-    <a href="{{route('home')}}">
-        Ir para Home
-    </a>
+  <section id="task_section">
+        <h1>Login</h1>
+        <form method="POST" action="{{route('user.login_action')}}">
+            @csrf
+            <x-form.textInput type="email" name="email" label="Seu E-mail" required="required"/>
+            <x-form.textInput type="password" name="password" label="Sua Senha"  Placeholder="Digite a sua senha aqui..." required="required"/>
+            <x-form.form_button resetText="Limpar" submitText="Entrar"/>
+        </form>
+    </section>
 </x-layout>

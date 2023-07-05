@@ -60,6 +60,11 @@ class TaskController extends Controller
          return redirect(route('home'));
     }
 
+    public function update(Request $request)
+    {
+
+    }
+
     public function delete(Request $request)
     {
         $id = $request->id;
